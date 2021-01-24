@@ -3,22 +3,22 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 // import {NavLink} from "react-router-dom"
 import Navbar from "./layout/Navbar";
-import Footer from "./layout/Footer";
-
 
 export default function App() {
   return (
-    
-    <View style={styles.container} options={{
-      title: 'My home',
-      headerStyle: {
-        backgroundColor: '#f4511e',
-      }}}
-      >
+    <View
+      style={styles.container}
+      options={{
+        title: "My home",
+        headerStyle: {
+          backgroundColor: "#f4511e",
+        },
+      }}
+    >
       <Navbar />
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
-      <Footer />
+      <BottomMenu />
     </View>
   );
 }

@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import './Footer.css';
+import "./BottomMenu.css";
 
-class Footer extends Component {
+class BottomMenu extends Component {
   render() {
     return (
-        <footer className="page-footer">
+      <footer className="page-footer">
         <div className="container">
           <div className="row">
             <div className="col l s4">
               <h5>Home</h5>
-              <ul>
-                {/* <li><Link to="/">Home</Link></li> */}
-              </ul>
+              <ul>{/* <li><Link to="/">Home</Link></li> */}</ul>
             </div>
             <div className="col 4 s4">
               <h5>Search</h5>
@@ -37,7 +35,6 @@ class Footer extends Component {
                 <li><Link to="/contact">Contact Us</Link></li>
               </ul> */}
             </div>
-
           </div>
         </div>
       </footer>
@@ -45,4 +42,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default BottomMenu;
