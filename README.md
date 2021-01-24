@@ -1,4 +1,6 @@
-# Info
+# Mobile
+
+## Getting Started/Setup
 
 [React Native - Getting Started](https://reactnative.dev/docs/getting-started)
 
