@@ -1,61 +1,11 @@
-// import BottomMenu from "./layout/BottomMenu";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
-
-function HomeScreen({ navigation }) {
-  return (
-    <View
-      style={styles.container}
-      options={{
-        title: "My home",
-        headerStyle: {
-          backgroundColor: "#f4511e",
-        },
-      }}
-    >
-      <StatusBar style="auto" />
-      {/* <Navbar /> */}
-      <Text>Home UI</Text>
-    </View>
-  );
-}
-
-function SearchScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Search UI</Text>
-    </View>
-  );
-}
-
-function NewsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>News UI</Text>
-    </View>
-  );
-}
-
-function MoreScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>More/Settings UI</Text>
-    </View>
-  );
-}
+import HomeScreen from "./screens/HomeScreen";
+import MoreScreen from "./screens/MoreScreen";
+import NewsScreen from "./screens/NewsScreen";
+import SearchScreen from "./screens/SearchScreen";
 
 const Tab = createBottomTabNavigator();
 
