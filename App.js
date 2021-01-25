@@ -1,33 +1,50 @@
-import { StatusBar } from "expo-status-bar";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-// import {NavLink} from "react-router-dom"
-import Navbar from "./layout/Navbar";
-import Footer from "./layout/Footer";
+import HomeScreen from "./screens/HomeScreen";
+import MoreScreen from "./screens/MoreScreen";
+import NewsScreen from "./screens/NewsScreen";
+import SearchScreen from "./screens/SearchScreen";
 
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    
-    <View style={styles.container} options={{
-      title: 'My home',
-      headerStyle: {
-        backgroundColor: '#f4511e',
-      }}}
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            // Customise navigation icons
+            if (route.name === "Home") {
+              iconName = focused ? "ios-home" : "ios-home-outline";
+            } else if (route.name === "Search") {
+              iconName = focused ? "ios-search" : "ios-search-outline";
+            } else if (route.name === "News") {
+              iconName = focused ? "ios-newspaper" : "ios-newspaper-outline";
+            } else if (route.name === "More") {
+              iconName = focused ? "ios-list" : "ios-list-outline";
+            }
+
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+        // Customise colours
+        tabBarOptions={{
+          activeTintColor: "white",
+          inactiveTintColor: "grey",
+          style: {
+            backgroundColor: "black",
+          },
+        }}
       >
-      <Navbar />
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <Footer />
-    </View>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen name="News" component={NewsScreen} />
+        <Tab.Screen name="More" component={MoreScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
