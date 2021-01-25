@@ -1,10 +1,21 @@
+// import BottomMenu from "./layout/BottomMenu";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-// import {NavLink} from "react-router-dom"
-import Navbar from "./layout/Navbar";
 
-export default function App() {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
+function HomeScreen({ navigation }) {
   return (
     <View
       style={styles.container}
@@ -15,19 +26,66 @@ export default function App() {
         },
       }}
     >
-      <Navbar />
-      <Text>Open up App.js to start working on your app!</Text>
+      {/* <Navbar /> */}
+      <Text>Home UI</Text>
       <StatusBar style="auto" />
-      <BottomMenu />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+function SearchScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Search UI</Text>
+    </View>
+  );
+}
+
+function NewsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>News UI</Text>
+    </View>
+  );
+}
+
+function MoreScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>More/Settings UI</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === "Home") {
+              iconName = focused ? "ios-home" : "ios-home-outline";
+            } else if (route.name === "Search") {
+              iconName = focused ? "ios-search" : "ios-search-outline";
+            } else if (route.name === "News") {
+              iconName = focused ? "ios-newspaper" : "ios-newspaper-outline";
+            } else if (route.name === "More") {
+              iconName = focused ? "ios-list" : "ios-list-outline";
+            }
+
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+      >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen name="News" component={NewsScreen} />
+        <Tab.Screen name="More" component={MoreScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
