@@ -26,9 +26,9 @@ function HomeScreen({ navigation }) {
         },
       }}
     >
+      <StatusBar style="auto" />
       {/* <Navbar /> */}
       <Text>Home UI</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }
@@ -67,6 +67,7 @@ export default function App() {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
+            // Customise navigation icons
             if (route.name === "Home") {
               iconName = focused ? "ios-home" : "ios-home-outline";
             } else if (route.name === "Search") {
@@ -80,6 +81,14 @@ export default function App() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
+        // Customise colours
+        tabBarOptions={{
+          activeTintColor: "white",
+          inactiveTintColor: "grey",
+          style: {
+            backgroundColor: "black",
+          },
+        }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Search" component={SearchScreen} />
