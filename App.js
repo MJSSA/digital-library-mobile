@@ -2,6 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
+import { Image, StatusBar, View } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
 import MoreScreen from "./screens/MoreScreen";
 import NewsScreen from "./screens/NewsScreen";
@@ -12,6 +13,18 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
+      {/* Move to NavBar/Header component */}
+      <StatusBar style="light" />
+      <View
+        style={{
+          backgroundColor: "black",
+          alignItems: "center",
+          // justifyContent: "center",
+        }}
+      >
+        <Image source={require("./img/logo.png")} />
+      </View>
+
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
