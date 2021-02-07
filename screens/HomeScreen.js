@@ -2,6 +2,7 @@ import React from "react";
 import {
   FlatList,
   Image,
+  LogBox,
   ScrollView,
   SectionList,
   StyleSheet,
@@ -11,65 +12,133 @@ import {
 
 const data = [
   {
-    title: "Continue Learning",
-    data: "Test",
-  },
-  {
-    title: "My Learning List",
-    data: "Test",
-  },
-  {
-    title: "Sunday School Lessons",
-    data: "Test",
-  },
-  {
-    title: "Prayers - Audio/Video",
-    data: "Test",
-  },
-  {
-    title: "Evangelical Messages",
-    data: "Test",
-  },
-  {
     title: "Popular",
-    data: "Test",
+    data: [
+      {
+        key: "1",
+        text: "Inaugration 2021",
+        link: "https://www.youtube.com/watch?v=99zeQK-PpQw",
+        uri:
+          "https://i.picsum.photos/id/695/200/300.jpg?hmac=8XcLTGOEhNglzXNZlLLbH0z6flQivZ2F6LML0Wah8lI",
+      },
+      {
+        key: "7",
+        text: "Item text 1",
+        uri: "https://picsum.photos/id/1/200",
+      },
+      {
+        key: "2",
+        text: "Item text 2",
+        uri: "https://picsum.photos/id/10/200",
+      },
+
+      {
+        key: "3",
+        text: "Item text 3",
+        uri: "https://picsum.photos/id/1002/200",
+      },
+      {
+        key: "4",
+        text: "Item text 4",
+        uri: "https://picsum.photos/id/1006/200",
+      },
+      {
+        key: "5",
+        text: "Item text 5",
+        uri: "https://picsum.photos/id/1008/200",
+      },
+    ],
   },
   {
-    title: "Devotional Hymns - Audio/Video",
-    data: "Test",
+    title: "Continue Learning",
+    data: [
+      {
+        key: "1",
+        text: "Inaugration 2021",
+        link: "https://www.youtube.com/watch?v=99zeQK-PpQw",
+        uri:
+          "https://i.picsum.photos/id/695/200/300.jpg?hmac=8XcLTGOEhNglzXNZlLLbH0z6flQivZ2F6LML0Wah8lI",
+      },
+      {
+        key: "7",
+        text: "Item text 1",
+        uri: "https://picsum.photos/id/1/200",
+      },
+      {
+        key: "2",
+        text: "Item text 2",
+        uri: "https://picsum.photos/id/10/200",
+      },
+
+      {
+        key: "3",
+        text: "Item text 3",
+        uri: "https://picsum.photos/id/1002/200",
+      },
+      {
+        key: "4",
+        text: "Item text 4",
+        uri: "https://picsum.photos/id/1006/200",
+      },
+      {
+        key: "5",
+        text: "Item text 5",
+        uri: "https://picsum.photos/id/1008/200",
+      },
+    ],
   },
-  {
-    title: "Qurbana Songs - Audio/Video",
-    data: "Test",
-  },
-  {
-    title: "Christmas Carols - Audio/Video",
-    data: "Test",
-  },
-  {
-    title: "Sunday School Class Activities",
-    data: "Test",
-  },
-  {
-    title: "Holy Qurbana Text",
-    data: "Test",
-  },
-  {
-    title: "Evening Prayers Text",
-    data: "Test",
-  },
-  {
-    title: "Devotional Hymns - Lyrics",
-    data: "Test",
-  },
-  {
-    title: "Qurbana Songs - Lyrics",
-    data: "Test",
-  },
-  {
-    title: "Christmas Carols - Lyrics",
-    data: "Test",
-  },
+  // {
+  //   title: "My Learning List",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Sunday School Lessons",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Prayers - Audio/Video",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Evangelical Messages",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Devotional Hymns - Audio/Video",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Qurbana Songs - Audio/Video",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Christmas Carols - Audio/Video",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Sunday School Class Activities",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Holy Qurbana Text",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Evening Prayers Text",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Devotional Hymns - Lyrics",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Qurbana Songs - Lyrics",
+  //   data: "Test",
+  // },
+  // {
+  //   title: "Christmas Carols - Lyrics",
+  //   data: "Test",
+  // },
 ];
 
 const styles = StyleSheet.create({
@@ -82,14 +151,23 @@ const styles = StyleSheet.create({
 });
 
 const ListItem = ({ item }) => {
+  // console.log("Displaying: ", item);
   return (
     <View style={{ margin: 10 }}>
-      <Text style={{ color: "white" }}>{item}</Text>
+      <Image
+        source={{
+          uri: item.uri,
+        }}
+        style={{ width: 100, height: 100 }}
+        resizeMode="cover"
+      />
+      <Text style={{ color: "white" }}>{item.text}</Text>
     </View>
   );
 };
 
 function HomeScreen() {
+  LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
   return (
     <View
       style={styles.container}
@@ -114,10 +192,10 @@ function HomeScreen() {
 
               <FlatList
                 horizontal
-                keyExtractor={(item, index) => item + index}
+                // keyExtractor={(item, index) => item + index}
                 data={section.data}
                 renderItem={({ item, index }) => <ListItem item={item} />}
-              ></FlatList>
+              />
             </>
           )}
           renderItem={({ item }) => null}
