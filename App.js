@@ -17,7 +17,7 @@ export default function App() {
       <StatusBar style="light" />
       <View
         style={{
-          // backgroundColor: "black",
+          backgroundColor: "black",
           alignItems: "center",
           // justifyContent: "center",
         }}

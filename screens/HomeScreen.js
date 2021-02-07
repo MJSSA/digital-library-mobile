@@ -87,14 +87,68 @@ const data = [
       },
     ],
   },
-  // {
-  //   title: "My Learning List",
-  //   data: "Test",
-  // },
-  // {
-  //   title: "Sunday School Lessons",
-  //   data: "Test",
-  // },
+  {
+    title: "My Learning List",
+    data: [
+      {
+        key: "1",
+        text: "Item text 1",
+        uri: "https://picsum.photos/id/1020/200",
+      },
+      {
+        key: "2",
+        text: "Item text 2",
+        uri: "https://picsum.photos/id/1024/200",
+      },
+
+      {
+        key: "3",
+        text: "Item text 3",
+        uri: "https://picsum.photos/id/1027/200",
+      },
+      {
+        key: "4",
+        text: "Item text 4",
+        uri: "https://picsum.photos/id/1035/200",
+      },
+      {
+        key: "5",
+        text: "Item text 5",
+        uri: "https://picsum.photos/id/1038/200",
+      },
+    ],
+  },
+  {
+    title: "Sunday School Lessons",
+    data: [
+      {
+        key: "1",
+        text: "Item text 1",
+        uri: "https://picsum.photos/id/1011/200",
+      },
+      {
+        key: "2",
+        text: "Item text 2",
+        uri: "https://picsum.photos/id/1012/200",
+      },
+
+      {
+        key: "3",
+        text: "Item text 3",
+        uri: "https://picsum.photos/id/1013/200",
+      },
+      {
+        key: "4",
+        text: "Item text 4",
+        uri: "https://picsum.photos/id/1015/200",
+      },
+      {
+        key: "5",
+        text: "Item text 5",
+        uri: "https://picsum.photos/id/1016/200",
+      },
+    ],
+  },
   // {
   //   title: "Prayers - Audio/Video",
   //   data: "Test",
@@ -186,7 +240,7 @@ function HomeScreen() {
           keyExtractor={(item, index) => item + index}
           renderSectionHeader={({ section }) => (
             <>
-              <Text style={{ fontSize: 32, color: "white" }}>
+              <Text style={{ fontSize: 32, color: "white", margin: 10 }}>
                 {section.title}
               </Text>
 
