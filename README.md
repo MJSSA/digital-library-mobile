@@ -49,7 +49,3 @@ Install [Expo](https://expo.io/) on Android or iOS to run the application from t
 [React - Context](https://reactjs.org/docs/context.html)
 
 [React Navigation - Getting Started](https://reactnavigation.org/docs/getting-started)
-
-```
-
-```
