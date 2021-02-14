@@ -1,7 +1,8 @@
 const playlistClassOne = require("./examples/playlist.json");
 const class_one = require("./examples/class_one.json");
+const config = require("./config.json");
 
-// const API_KEY = "AIzaSyBh908CyY4BwzxCcJkffB1sGpY1jPOiUk4";
+// const API_KEY = config.API_KEY;
 // Class 1 - https://www.youtube.com/playlist?list=PLi7eThhIcNIrb7zEE3L39_Yzq76WrRZol
 // const playlist_id = "PLi7eThhIcNIrb7zEE3L39_Yzq76WrRZol";
 
