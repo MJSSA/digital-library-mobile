@@ -1,0 +1,54 @@
+{
+    "kind": "youtube#playlistListResponse",
+    "etag": "eMmhLd1NZ6NvWsjLDifksg9qsvg",
+    "pageInfo": {
+      "totalResults": 1,
+      "resultsPerPage": 5
+    },
+    "items": [
+      {
+        "kind": "youtube#playlist",
+        "etag": "6hK2rtc1fV9Xzm_A12fZG_4i_VU",
+        "id": "PLi7eThhIcNIrb7zEE3L39_Yzq76WrRZol",
+        "snippet": {
+          "publishedAt": "2020-06-20T10:44:10Z",
+          "channelId": "UC7g4Zk0-txPp2p4BH1kXx0Q",
+          "title": "CLASS 1",
+          "description": "MJSSA Sunday School Online Class 1",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/3M8S_6ik6M0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/3M8S_6ik6M0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/3M8S_6ik6M0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/3M8S_6ik6M0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/3M8S_6ik6M0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "channelTitle": "MJSSA Online",
+          "localized": {
+            "title": "CLASS 1",
+            "description": "MJSSA Sunday School Online Class 1"
+          }
+        }
+      }
+    ]
+  }
+  
