@@ -4,12 +4,6 @@
 
 Make sure to have [Node.js](https://nodejs.org/en/download/) installed before proceeding.
 
-Install Yarn as your package manager if you have not already got it:
-
-```
-$ npm install --global yarn
-```
-
 Clone the repository and change into it:
 
 ```bash
@@ -21,15 +15,15 @@ $ cd digital-library-mobile
 Install Expo globally:
 
 ```bash
-$ yarn global add expo-cli
+$ npm global add expo-cli
 ```
 
 Install dependencies and start project:
 
 ```bash
-$ yarn install
+$ npm install
 
-$ yarn start
+$ npm start
 ```
 
 Install [Expo](https://expo.io/) on Android or iOS to run the application from the QR code provided in the Expo browser.
