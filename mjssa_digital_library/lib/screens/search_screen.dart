@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SearchScreen extends StatelessWidget {
+class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
   @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Search',
-        style: TextStyle(
-          fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
-    ));
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Search'
+        ),
+      ),  
+    );
   }
 }
