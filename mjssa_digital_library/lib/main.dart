@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mjssa_digital_library/screens/home_screen.dart';
+import 'package:mjssa_digital_library/screens/more_screen.dart';
+import 'package:mjssa_digital_library/screens/search_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,18 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white);
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Center(child: Text(
-      'Home',
-      style: optionStyle,
-    )),
-    Center(child: Text(
-      'Search',
-      style: optionStyle,
-    )),
-    Center(child: Text(
-      'More',
-      style: optionStyle,
-    )),
+    HomeScreen(),
+    SearchScreen(),
+    MoreScreen(),
   ];
 
   // void _incrementCounter() {
@@ -143,26 +137,30 @@ class _MyHomePageState extends State<MyHomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.newspaper),
             label: 'More',
+            backgroundColor: Colors.black,
           ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
+        selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
-        // elevation: 8,
+        elevation: 0,
       ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,
