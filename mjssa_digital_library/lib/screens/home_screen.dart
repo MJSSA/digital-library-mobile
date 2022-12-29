@@ -5,11 +5,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Home',
-        style: TextStyle(
-          fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
-    ));
+    return Column(
+      // NOTE: crossAxisAlignment important to stretching contents to fill width.
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset('images/logo.png', fit: BoxFit.cover),
+        Image.asset('images/bible-quote-1.png', fit: BoxFit.cover),
+      ],
+    );
   }
 }

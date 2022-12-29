@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MJSSA - Digital Library',
+      debugShowCheckedModeBanner: false,
       // theme: ThemeData(
       //   // This is the theme of your application.
       //   //
@@ -56,9 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
   // int _counter = 0;
   int _selectedIndex = 0;
 
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white);
+  // static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white);
 
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _pages = <Widget>[
     HomeScreen(),
     SearchScreen(),
     MoreScreen(),
@@ -90,11 +91,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      // NOTE: Not using the app bar at the moment
       // appBar: AppBar(
       //   // Here we take the value from the MyHomePage object that was created by
       //   // the App.build method, and use it to set our appbar title.
       //   title: Text(widget.title),
       // ),
+
       // body: Center(
       //   // Center is a layout widget. It takes a single child and positions it
       //   // in the middle of the parent.
@@ -125,17 +128,14 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // ),
-      // Column(
-      //       // NOTE: crossAxisAlignment important to stretching contents to fill width.
-      //       crossAxisAlignment: CrossAxisAlignment.stretch,
-      //       children: [
-      //         Image.asset('images/logo.png', fit: BoxFit.cover),
-      //         Image.asset('images/bible-quote-1.png', fit: BoxFit.cover),
-      //       ],
-      //     )
       body: SafeArea(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: IndexedStack(
+          index: _selectedIndex,
+          children: _pages,
+        ),
       ),
+
+      // Bottom navigation bar
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
         items: const <BottomNavigationBarItem>[
